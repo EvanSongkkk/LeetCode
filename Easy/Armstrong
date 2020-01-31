@@ -1,0 +1,15 @@
+class Solution:
+    def isArmstrong(self, N: int) -> bool:
+        leng, lenN, num = 0, N, []
+        while lenN != 0:
+            a = lenN%10
+            num.append(a)
+            lenN = int(lenN/10)
+            leng += 1
+        summ = 0
+        for i in range(leng):
+            summ += num[i]**leng
+        if(summ == N):
+            return True
+        else:
+            return False
